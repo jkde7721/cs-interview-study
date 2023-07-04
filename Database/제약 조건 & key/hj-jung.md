@@ -7,6 +7,7 @@ ex) 회사에서의 고용자, 제품에 대한 주문
 * 두 엔티티간의 관계 표현<br/>
 ex) 회사에서의 고용자 & 그들의 숙련도 / 제품 & 주문의 관계
 
+
 ### 테이블 구조
 * **행(row)**
   * = 관계된 데이터들의 묶음 (가로 칸)
@@ -108,6 +109,8 @@ DROP COLUMN 삭제할 컬럼명;
 <img src="https://velog.velcdn.com/images%2Fm1njae%2Fpost%2Ff565de4f-4ba6-4d98-ab01-d470d6027afe%2Fimage.png">
 <br/>
 
+---
+
 ## 제약조건
 ### 제약조건이란?
 * 데이터의 무결성을 지키기 위해 입력받은 데이터에 대해 사용자가 제한을 두는 것
@@ -160,7 +163,7 @@ DROP CONSTRAINT EMP2_UK_DEPTNO;
 * 제약조건 추가&삭제 시 둘 다 ALTER 이용
 <br/>
 
-### 3. PRIMARY KEY
+### 3. PRIMARY KEY (기본키)
 ```sql
 --기본적인 Primary
 Create Table 테이블(
@@ -182,7 +185,7 @@ Create Table 테이블(
   > 인덱스(INDEX) : 검색 키로서 검색 속도 향상
 <br/>
 
-### 4. FOREIGN KEY
+### 4. FOREIGN KEY (외래키)
 ```sql
 Create Table 테이블(
 	    필드명 INT ,
