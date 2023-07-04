@@ -70,3 +70,5 @@ DBMS는 index를 항상 최신 정렬 상태로 유지해야 원하는 값 빠�
 [[MySQL] B-Tree로 인덱스(Index)에 대해 쉽고 완벽하게 이해하기](https://mangkyu.tistory.com/286)<br/>
 [B트리,B+트리, B*트리 개념 정리](https://velog.io/@seanlion/btree)<br/>
 [데이터베이스의 인덱스 알고리즘](https://ledpear.tistory.com/58?category=932656)<br/>
+[[MySQL 8.0] B-Tree Index (feat. B+Tree와의 차이)](https://velog.io/@evelyn82ny/B-Tree-index-feat-difference-from-B-plus-Tree)
+
