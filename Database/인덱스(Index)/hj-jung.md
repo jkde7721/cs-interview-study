@@ -17,14 +17,14 @@ DBMS는 index를 항상 최신 정렬 상태로 유지해야 원하는 값 빠�
 <br/>
 
 ### Index 장단점
-장점
-* 테이블 조회 속도와 그에 따른 성능 향상
-* 전반적인 시스템의 부하 감소   
+* 장점
+  * 테이블 조회 속도와 그에 따른 성능 향상
+  * 전반적인 시스템의 부하 감소   
 
-단점
-* 인덱스 관리 위해 DB의 약 10%에 해당하는 저장공간 필요
-* 인덱스 관리 위한 추가 작업 필요
-* 인덱스 잘못 사용 시, 역효과가 발생<br/>:  CREATE, DELETE, UPDATE가 빈번한 속성에 인덱스를 걸게 되면 인덱스의 크기가 비대해져서 **성능 오히려 저하**<br/> UPDATE와 DELETE는 기존 인덱스를 삭제하지 않고 '사용하지 않음' 처리를 하기 때문에 실제 데이터에 비해 인덱스는 훨씬 많이 존재하게 됨
+* 단점
+  * 인덱스 관리 위해 DB의 약 10%에 해당하는 저장공간 필요
+  * 인덱스 관리 위한 추가 작업 필요
+  * 인덱스 잘못 사용 시, 역효과가 발생<br/>:  CREATE, DELETE, UPDATE가 빈번한 속성에 인덱스를 걸게 되면 인덱스의 크기가 비대해져서 **성능 오히려 저하**<br/> UPDATE와 DELETE는 기존 인덱스를 삭제하지 않고 '사용하지 않음' 처리를 하기 때문에 실제 데이터에 비해 인덱스는 훨씬 많이 존재하게 됨
 
 <br/>
 
@@ -59,9 +59,10 @@ DBMS는 index를 항상 최신 정렬 상태로 유지해야 원하는 값 빠�
 * 리프노드(데이터노드)만 인덱스와 데이터(Value)를 함께 가지고 있고, 나머지 노드(인덱스노드)들은 데이터를 위한 인덱스(Key)만 가짐
 * 리프노드들은 LinkedList로 연결되어 있음 -> 순차검색 용이하게!
 * 데이터 노드 크기는 인덱스 노드 크기와 같지 않아도 됨
+<br/>
 
 ### 참고
-[[Database] 인덱스(index)란?](https://mangkyu.tistory.com/96)
-[[MySQL] B-Tree로 인덱스(Index)에 대해 쉽고 완벽하게 이해하기](https://mangkyu.tistory.com/286)
-[B트리,B+트리, B*트리 개념 정리](https://velog.io/@seanlion/btree)
-[데이터베이스의 인덱스 알고리즘](https://ledpear.tistory.com/58?category=932656)
+[[Database] 인덱스(index)란?](https://mangkyu.tistory.com/96)<br/>
+[[MySQL] B-Tree로 인덱스(Index)에 대해 쉽고 완벽하게 이해하기](https://mangkyu.tistory.com/286)<br/>
+[B트리,B+트리, B*트리 개념 정리](https://velog.io/@seanlion/btree)<br/>
+[데이터베이스의 인덱스 알고리즘](https://ledpear.tistory.com/58?category=932656)<br/>
