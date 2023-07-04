@@ -51,5 +51,5 @@
 -   **대체 키(Surrogate key)**: 후보 키 중에 기본 키로 선택되지 않은 키.
 -   **외래 키(Foreign Key):**  어떤 테이블(Relation) 간의 기본 키(Primary key)를 참조하는 속성이다. 테이블(Relation)들 간의 관계를 나타내기 위해서 사용된다.
 
-![키 관계](https://drive.google.com/file/d/17QQyOXqcjhDdsQO8ENuJxNsrXiNk7yyc/view?usp=sharing)
+![키 관계](https://velog.velcdn.com/images/cchloe2311/post/0a2e87c1-75f8-482b-879c-4867d41f795a/image.png)
 
