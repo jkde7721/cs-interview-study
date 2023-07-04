@@ -39,7 +39,7 @@ DBMS는 index를 항상 최신 정렬 상태로 유지해야 원하는 값 빠�
 #### 2. B-Tree <br/><br/>
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fdjhlni%2FbtrXnJAFNh0%2FmdqodQkO6khsmi3Z8seFQ1%2Fimg.png"><br/>
 * 인덱스에서 가장 일반적으로 사용되는 자료구조
-* 자식 2개 만을 갖는 이진 트리(Binary Tree)를 확장하여 N개의 자식을 가질 수 있도록 고안된 항상 균형을 맞추는 균형 트리(Balanced Tree)
+* 자식 노드 2개만을 갖는 이진 트리(Binary Tree)를 확장하여 N개의 자식을 가질 수 있도록 고안된 항상 균형을 맞추는 균형 트리(Balanced Tree)
 * 모든 노드에 데이터(Value) 저장<br/>
 #### 2-1. B-Tree 인덱스 구조 <br/>
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FejxY4N%2FbtrXnwhiPKR%2FQ2XAYLfbiKgqKeYccH0oCK%2Fimg.png"><br/>
@@ -56,9 +56,13 @@ DBMS는 index를 항상 최신 정렬 상태로 유지해야 원하는 값 빠�
 #### 3. B+Tree <br/>
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fd78iJ0%2FbtqKRYbLdM9%2FnIvz1M4gffMl4YHS77JSfK%2Fimg.png"><br/>
 * DB의 인덱스 위해 자식 노드가 2개 이상인 B-Tree를 개선한 자료구조
-* 리프노드(데이터노드)만 인덱스와 데이터(Value)를 함께 가지고 있고, 나머지 노드(인덱스노드)들은 데이터를 위한 인덱스(Key)만 가짐
-* 리프노드들은 LinkedList로 연결되어 있음 -> 순차검색 용이하게!
-* 데이터 노드 크기는 인덱스 노드 크기와 같지 않아도 됨
+* B-Tree의 특징 + 모든 키 값들이 리프 노드에 정렬되어있음
+* 리프 노드(데이터노드)에만 데이터(Value)를 저장하고, 나머지 노드(인덱스노드)인 루트 노드와 브랜치 노드에는 자식 포인터 즉, 데이터를 위한 인덱스(Key)만 저장<br/>
+  (<-> B-Tree는 브랜치 노드에도 데이터 저장 가능)
+* 리프 노드들이 LinkedList로 연결되어 있음<br/>
+  -> 순차검색 용이하게!<br/>
+  -> B-Tree는 모든 리프 노드에 접근하려면 루트 노드와 모든 브랜치 노드를 방문해야했지만 B+Tree는 리프 노드들이 서로 연결되어 있기 때문에 모든 브랜치 노드를 방문하지 않고도 바로 모든 리프 노드에 방문 가능
+* 데이터 노드 크기는 인덱스 노드 크기와 같지 않아도 됨  
 <br/>
 
 ### 참고
