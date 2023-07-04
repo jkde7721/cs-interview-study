@@ -235,7 +235,6 @@ Create Table 테이블(
 <br/>
 
 
-
 ## 참고
 [[DB] 테이블 개념](https://lhh3520.tistory.com/38) <br/>
 [관계형 데이터베이스 1) 릴레이션이란?](https://nolja98.tistory.com/12)<br/>
