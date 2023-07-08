@@ -95,4 +95,5 @@ _고립성을 엄격하게 유지하는 것은 데이터베이스 시스템 성�
 ### 참고
 
 [데이터베이스 개론(3판)](https://www.hanbit.co.kr/store/books/look.php?p_code=B6505632990)
+
 [트랜잭션 ACID](https://johngrib.github.io/wiki/database/acid/)
