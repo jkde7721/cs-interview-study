@@ -141,8 +141,9 @@
 * 데이터의 캡슐화와 은닉 가능 : 다른 계층끼리는 데이터의 전달 과정을 구체적으로 알 필요 X
 * 캡슐화 = 데이터 전송 시, 데이터가 상위 계층->하위 계층으로 이동. 계층 간 데이터 이동마다 필요한 정보(헤더) 추가됨 
 * 역캡슐화 = 데이터 수신 시, 데이터가 하위 계층->상위 계층으로 이동. 계층 간 데이터 이동마다 추가된 헤더를 읽고 알맞은 행동 취한 후에 헤더 제거
-* 계층 별 추가되는 헤더
-  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FezkpmB%2FbtrEuQjONvp%2Fmc7GW3SNxmypplWwn0zqLK%2Fimg.png"><br/>
+* 계층 별 추가되는 헤더<br>
+
+   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FezkpmB%2FbtrEuQjONvp%2Fmc7GW3SNxmypplWwn0zqLK%2Fimg.png"><br/>
 <br/>
 
 #### - TCP/IP 4계층 구조
