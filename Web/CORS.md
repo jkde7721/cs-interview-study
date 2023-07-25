@@ -58,12 +58,12 @@
 
 #### 동일 출처 예시
 
-http://example.com/app1/index.html
+http://example.com/app1/index.html,
 http://example.com/app2/index.html
 
 #### 다른 출처 예시
 
-http://example.com/app1
+http://example.com/app1,
 https://example.com/app2
 &rarr; Protocol이 다름!
 
@@ -81,11 +81,13 @@ https://example.com/app2
 ① 클라이언트에서 HTTP 요청의 헤더에 Origin을 담아 전달
 
 - 기본적으로 웹은 HTTP 프로토콜을 이용하여 서버에 요청을 보내게 되는데 이때 브라우저는 요청 헤더에 Origin이라는 필드에 출처를 함께 담아 보내게 된다.
+
   ![enter image description here](https://velog.velcdn.com/images/dae_eun2/post/17d9738c-6b9a-41f2-a3af-059fbc736417/image.png)
 
 ② 서버는 응답 헤더에 Access-Control-Allow-Origin을 담아 클라이언트로 전달
 
 - 이후 서버가 이 요청에 대한 응답을 할 때 응답 헤더에 'Access-Control-Allow-Origin'이라는 필드를 추가하고 값으로 '이 리소스를 접근하는 것이 허용된 출처 URL'을 내려보낸다.
+
   ![enter image description here](https://velog.velcdn.com/images/dae_eun2/post/059b901d-5885-4917-b9df-3335249b8dc0/image.png)
 
 ③ 클라이언트에서 Origin과 서버가 보내준 Access-Control-Allow-Origin을 비교한다.
@@ -95,6 +97,7 @@ https://example.com/app2
 - 위의 경우에는 둘다 http://localhost:3000이기 때문에 유효하니 다른 출처의 리소스를 문제없이 가져오게 된다.
 
 &rarr; 결국 CORS 해결책은 서버의 허용이 필요!
+
 &rarr; 서버에서 Access-Control-Allow-Origin 헤더에 허용할 출처를 기재해서 클라이언트에 응답하면 되는 것
 
 <br/>
@@ -120,6 +123,7 @@ https://example.com/app2
 
 - 예비 요청을 생략하고 바로 서버에 직행으로 본 요청을 보낸 후 서버가 이에 대한 응답의 헤더에 Access-Control-Allow-Origin 헤더를 보내주면 브라우저가 CORS 정책 위반 여부를 검사하는 방식
 - 심플한 만큼 특정 조건을 만족하는 경우에만 예비 요청을 생략할 수 있다.
+  <br/>
 
 < 3가지 경우를 만족할 때 가능 >
 
