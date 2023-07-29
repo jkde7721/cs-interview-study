@@ -49,9 +49,12 @@
 
 <details>
     <summary>REST에서 URI가 무엇인지 설명해주세요.</summary>
-    <br/><code>Uniform Resource Identifier</code><br/><br/>
+    <br/><code>Uniform Resource Identifier</code>, <code>리소스 식별</code>, <code>리소스 위치</code><br/><br/>
 
-    Uniform Resource Identifier의 약자로 인터넷 상의 자원을 식별하기 위한 고유한 문자열을 의미합니다. URI 중에는 인터넷 상 자원의 위치를 의미하는 URL이 있습니다.
+    URI는 Uniform Resource Identifier의 약자로 인터넷 상의 리소스를 식별하기 위한 고유한 문자열을 의미합니다. URI의 하위 개념으로 인터넷 상에서 리소스의 위치를 나타내는 URL 이라는 개념이 있습니다. 즉 URL에 포함된 해당 리소스의 주소와 프로토콜 정보를 기반으로 리소스에 접근할 수 있습니다. 이때 이 주소 정보를 통해 리소스를 유일하게 식별할 수도 있으므로 URL은 URI라 할 수 있습니다.
+
+    W3C가 URI와 URL을 교차하여 사용해도 된다는 URI 문서 발행 → URI를 URL, URN 등과 엄격하게 구분할 필요X
+    *URI 문서: https://www.w3.org/TR/uri-clarification/
 
 </details>
 
