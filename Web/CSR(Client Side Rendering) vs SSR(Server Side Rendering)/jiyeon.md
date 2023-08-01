@@ -1,7 +1,11 @@
 ﻿
-#  SSR vs CSR
+#  SSR(Server Side Rendering) vs CSR(Client Side Rendering)
 
 렌더링을 클라이언트 측에서 하느냐(CSR) 서버 측에서 하느냐(SSR)의 차이이다.
+
+**렌더링이란?**
+HTML, CSS, JS 파일을 읽어 사용자가 인터렉션할 수 있는 웹페이지로 만드는 과정이다.
+
 
 **CSR(Client Side Rendering)**
 최초 로딩시 서버에서 HTML파일을 보내주고 HTML에 링크된 CSS, JavaScript 등 **각종 리소스들을 받아와 프론트에서 동적으로 렌더링한다.**
