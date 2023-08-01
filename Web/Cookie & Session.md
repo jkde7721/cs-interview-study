@@ -25,6 +25,8 @@
 
 &rarr; Stateful 경우를 대처하기 위해 쿠키와 세션을 사용
 
+<br/>
+
 ## 쿠키(Cookie)란?
 
 > HTTP의 일종으로 사용자가 어떠한 웹 사이트를 방문할 경우, 그 사이트가 사용하고 있는 서버에서 사용자의 컴퓨터에 저장하는 작은 기록 정보 파일
@@ -162,5 +164,5 @@
 
 ### 참고
 
-[쿠키(Cookie)와 세션(Session)의 차이 (+캐시(Cache))](https://dev-coco.tistory.com/61)
+[쿠키(Cookie)와 세션(Session)의 차이 (+캐시(Cache))](https://dev-coco.tistory.com/61)<br/>
 [쿠키와 세션 개념](https://interconnection.tistory.com/74)
