@@ -68,21 +68,22 @@
 <br/>
 
 3. Signature (서명)
+
   ```sql
   HMACSHA512(
-  base64UrlEncode(header) + "." +
-  base64UrlEncode(payload),
-  your-256-bit-secret
-  ) □secret base64 encoded
+    base64UrlEncode(header) + "." +
+    base64UrlEncode(payload),
+    secret
+  )
   ```
-  * 'Hearder를 디코딩한 값 + "." + Payload를 디코딩한 값'을 합치고 이를 your-256-bit-secret(서버가 가지고 있는 개인키로 암호화되어 있는 상태)라는 비밀 코드(Secret)로 지정
-  * signature는 서버에 있는 개인키로만 복호화 가능. 다른 클라는 임의로 복호화 불가능
-  * 복호화 과정
-    * 클라이언트가 JWT 토큰을 서버로 요청하며 동시에 전달
-    * 서버가 가지고 있는 개인키를 통해 Signature를 복호화
-    * base64UrlEncode(header)가 JWT의 Header값&base64UrlEncode(payload)와 일치한지 확인
-    * 2개 모두 일치하면 인증 허용
-<br/>
+
+  * JWT의 변조 여부를 확인하기 위해 존재하는 부분
+  * JWT 발급 시 <code>Base64Url 인코딩된 Header<b>.</b>Base64Url 인코딩된 Payload</code>를 secret(서버만 가지고 있는 비밀키)을 이용해 Header에서 지정한 알고리즘으로 해싱한 뒤 다시 Base64Url 인코딩하여 생성
+    
+    _해싱: 일종의 단방향 암호화로 해싱된 데이터는 원본 데이터로 되돌리는 복호화 불가_
+
+  * JWT 사용 시 서버는 클라이언트로부터 전달받은 JWT의 Header, Payload를 이용해 위와 동일한 프로세스로 직접 Signature를 생성해보고 이 값이 전달받은 JWT의 Signature와 동일하다면 유효한 JWT, 즉 변조되지 않은 JWT임이 보장
+
 <br/>
 
 ### JWT 사용과정
