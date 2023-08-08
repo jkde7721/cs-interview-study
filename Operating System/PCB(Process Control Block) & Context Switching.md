@@ -10,10 +10,10 @@
   &rarr; 스케줄링은 멀티 태스킹 작업을 만들어내는 데에 있어서 핵심적인 부분
 
 - 스케줄링은 운영체제의 특징과 시스템 요구사항에 따라 다양한 알고리즘 방식으로 동작
-
-    <br/>
+  <br/>
 
   **< 알고리즘 종류 >**
+  <br/>
   :arrow_right: FCFS(First-Come, First-Served), SJF(Shortest-Job-First), Priority, RR(Round-Robin), Multilevel Queue 등
 
 <br/>
