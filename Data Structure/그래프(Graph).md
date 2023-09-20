@@ -1,9 +1,13 @@
 # 그래프(Graph)
 ### 그래프란?
-* = 정점과 정점 사이를 연결하는 간선으로 이루어진 비선형 자료구조
+* 정점과 정점 사이를 연결하는 간선으로 이루어진 비선형 자료구조
+  * 정점 = 노드(node)라고도 하며 데이터가 저장됨
+  * 간선 = 링크(link)라고도 하며 관계를 나타냄
+* 정점은 여러 개의 간선 보유 가능
+* 간선은 가중치를 가질 수 있음
 * 인물 관계도, 지하철 노선도, 페이지 랭크(검색 알고리즘)에 활용 가능
-* 탐색 시, 무한 루프에 빠지지 않도록 사이클을 찾아야 함
-  * 사이클 = 그래프의 정점과 간선의 부분 집합에서 순환이 되는 부분
+* 탐색 시, 무한 루프에 빠지지 않도록 사이클 발생 시 적절한 사이클을 찾아야 함
+  * 사이클 = 그래프의 정점과 간선의 부분 집합에서 순환이 되는 부분. 경로의 시작 노드와 종료 노드가 동일한 경우
 <br/>
 
 ### 그래프 분류
@@ -29,21 +33,86 @@
 
 ### 구현 방법
 * 인접 행렬 (2차원 배열)
+  <img src="https://velog.velcdn.com/images%2Fcodenmh0822%2Fpost%2Fc9effab8-7ccc-4bc9-b05f-d70f663a6ff6%2Fimage.png"><br/>
+  * 그래프의 노드를 2차원 배열로 만든 것
+  * 각 정점의 연결 정보를 0과 1로 표현
+
 
   ```
-  const graph = Array.from(Array(5), () => Array(5).fill(false));
+  const graph = Array.from(new Array(7), () => new Array(7).fill(0));
+
+  graph[1][2] = 1;
+  graph[1][3] = 1;
+  graph[2][1] = 1;
+  graph[2][3] = 1;
+  graph[2][4] = 1;
+  graph[3][1] = 1;
+  graph[3][2] = 1;
+  graph[3][4] = 1;
+  graph[3][5] = 1;
+  graph[4][2] = 1;
+  graph[4][3] = 1;
+  graph[4][5] = 1;
+  graph[4][6] = 1;
+  graph[5][3] = 1;
+  graph[5][4] = 1;
+  graph[6][4] = 1;
+  
+  for(let i = 1; i < graph.length; i++) {
+    console.log(graph[i].slice(1).join(' ')); // 0번 정점이 없으므로 제거
+  }
+
+  // 결과 
+
+  // 0 1 1 0 0 0
+  // 1 0 1 1 0 0
+  // 1 1 0 1 1 0
+  // 0 1 1 0 1 1
+  // 0 0 1 1 0 0
+  // 0 0 0 1 0 0
   ```
-  * 'graph[a][b] == true'는 a와 b가 연결되어 있다는 의미
-  * 방향 그래프에서는 graph[a][b]와 graph[b][a]를 구분함
-  * 무방향 그래프에서는 모든 값을 대칭으로 넣어주면 됨
+  * 장점
+    * 2차원 배열 안에 모든 정점들의 간선 정보가 포함되므로 배열의 위치를 확인하면, 두 정점의 연결 정보를 탐색할 때 O(1)의 상수 시간복잡도로 가능함
+    * 비교적 간단한 구현
+  * 단점
+    * 모든 정점에 대해 간선 정보를 대입해야 하므로 인접행렬 생성에 O(N^2)의 시간복잡도 소요.
+    * 무조건 2차원 배열이 필요하므로 메모리의 낭비가 심함
+<br/>  
+
 * 인접 리스트 (연결 리스트)
+  * 그래프의 노드들을 연결 리스트로 표현한 것
+  * 주로 정점의 연결 리스트 배열을 통해 관계를 설정하여 구현
+  ```
+  const graph = Array.from(new Array(7), () => []);
 
+  graph[1].push(2);
+  graph[1].push(3);
+  graph[2].push(1);
+  graph[2].push(3);
+  graph[2].push(4);
+  graph[3].push(1);
+  graph[3].push(2);
+  graph[3].push(4);
+  graph[3].push(5);
+  graph[4].push(2);
+  graph[4].push(3);
+  graph[4].push(5);
+  graph[4].push(6);
+  graph[5].push(3);
+  graph[5].push(4);
+  graph[6].push(4);
+  
+  console.log(graph); // 0번 정점은 없으므로 1 인덱스(정점) 배열부터 ~ 6까지의 연결정보
   ```
-  const graph = Array.from(Array(5), () => []);
-  //graph[a].push(b) a --> b
-  ```
-  * 'graph[a].push(b)' 는 a와 b가 연결되어 있다는 의미
+  * 장점
+    * 정점들의 연결 정보를 탐색할 때 O(n)의 시간복잡도 (n: 간선의 갯수)
+    * 필요한 만큼의 공간만 사용하여 저장 공간의 낭비 적음
+  * 단점
+    * 특정 두 점이 연결되었는지 탐색하려면 인접행렬에 비해 오랜 시간 소요 (배열보다 연결리스트가 탐색속도 느림)
+    * 구현이 비교적 어려움
   <br/>
 
 ## 참고
-[TIL 6 | 자료구조 - 그래프, 트리, 힙, 트라이](https://velog.io/@grighth12/TIL-6-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EA%B7%B8%EB%9E%98%ED%94%84-%ED%8A%B8%EB%A6%AC-%ED%9E%99-%ED%8A%B8%EB%9D%BC%EC%9D%B4)
+[TIL 6 | 자료구조 - 그래프, 트리, 힙, 트라이](https://velog.io/@grighth12/TIL-6-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EA%B7%B8%EB%9E%98%ED%94%84-%ED%8A%B8%EB%A6%AC-%ED%9E%99-%ED%8A%B8%EB%9D%BC%EC%9D%B4)<br/>
+[비선형 자료구조 - 그래프(Graph)](https://velog.io/@codenmh0822/%EB%B9%84%EC%84%A0%ED%98%95-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EA%B7%B8%EB%9E%98%ED%94%84Graph)
+
