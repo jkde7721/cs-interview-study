@@ -73,9 +73,9 @@
 <br/>
 
 ### DFS(Depth First Search) : 깊이우선탐색
-1. 전위 순회(Preorder Traversal)
+1. 전위 순회(Preorder Traversal)<br/>
 <img src="https://velog.velcdn.com/images%2Fcodenmh0822%2Fpost%2F6e69891b-806f-4469-a008-777fab8b2078%2Fimage.png"><br/>
-  * 탐색법 : 1. 루트노드 방문 -> 2. 왼쪽 서브트리 전위 순회 -> 3. 오른쪽 서브트리 전위 순회
+  * 탐색법 : 루트노드 방문 -> 왼쪽 서브트리 전위 순회 -> 오른쪽 서브트리 전위 순회
   * 위 트리의 전위 순회 결과 'A->B->C->D->E->F->G'
     ```
     preOrder(root = this.root) {
@@ -88,9 +88,9 @@
     }
     ```
     
-2. 중위 순회(Inorder Traversal)
+2. 중위 순회(Inorder Traversal)<br/>
 <img src="https://velog.velcdn.com/images%2Fcodenmh0822%2Fpost%2F532c13b1-698e-44c0-a107-20a4417e22a1%2Fimage.png"><br/>
-  * 탐색법 : 1. 왼쪽 서브트리 중위 순회 -> 2. 루트노드 방문 -> 3. 오른쪽 서브트리 중위 순회
+  * 탐색법 : 왼쪽 서브트리 중위 순회 -> 루트노드 방문 -> 오른쪽 서브트리 중위 순회
   * 위 트리의 중위 순회 결과 'D->B->E->A->F->C->G'
     ```
     inOrder(root = this.root) {
@@ -103,8 +103,8 @@
     }
     ```
     
-3. 후위 순회(Postorder Treaversal)
-  * 탐색법 : 1. 왼쪽 서브트리 후위 순회 -> 2. 오른쪽 서브트리 후위 순회 -> 3. 루트노드 방문
+3. 후위 순회(Postorder Treaversal)<br/>
+  * 탐색법 : 왼쪽 서브트리 후위 순회 -> 오른쪽 서브트리 후위 순회 -> 루트노드 방문
   * 위 트리의 후위 순회 결과 'D->E->B->F->G->C->A'
     ```
     postOrder(root = this.root) {
