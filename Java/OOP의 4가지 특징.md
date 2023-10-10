@@ -41,6 +41,8 @@
 
 ## OOP의 특징 4가지
 
+![oop](https://github.com/jkde7721/cs-interview-study/assets/80473521/05afd4d4-9587-4e29-991f-f897db3dbb43)
+
 1. **추상화 (Abstraction)**
 
 - 객체들의 공통적인 특징(기능, 속성)을 추출해서 정의하는 것 (클래스를 정의하는 것)
