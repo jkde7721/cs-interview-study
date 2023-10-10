@@ -31,9 +31,7 @@ public  class UserService {
 	private  final SimplePasswordEncoder passwordEncoder;
 	public void addUser(final String email, final String pw) {
 		final String encryptedPassword = passwordEncoder.encryptPassword(pw);
-		final User user = User.builder()
-							  .email(email)
-							  .pw(encryptedPassword).build();
+		final User user = User.builder().email(email).pw(encryptedPassword).build();
 		userRepository.save(user);
 	}
 }
@@ -57,10 +55,10 @@ public  class UserService {
 
 > 확장에 대해 열려있고 수정에 대해서는 닫혀있어야 한다는 원칙
 
-- 확장에 대해 열려 있다
+- 확장에 대해 열려 있다<br/>
   :point_right: 요구사항이 변경될 때 새로운 동작을 추가하여 애플리케이션의 기능을 확장할 수 있다.
 
-- 수정에 대해 닫혀 있다
+- 수정에 대해 닫혀 있다<br/>
   :point_right: 기존의 코드를 수정하지 않고 애플리케이션의 동작을 추가하거나 변경할 수 있다.
   <br/>
 
@@ -80,9 +78,7 @@ public  class UserService {
 	private  final PasswordEncoder passwordEncoder;
 	public void addUser(final String email, final String pw) {
 		final String encryptedPassword = passwordEncoder.encryptPassword(pw);
-		final User user = User.builder()
-							  .email(email)
-							  .pw(encryptedPassword).build();
+		final User user = User.builder().email(email).pw(encryptedPassword).build();
 		userRepository.save(user);
 	}
 }
@@ -139,10 +135,10 @@ public  class SHA256PasswordEncoder implements PasswordEncoder, PasswordChecker 
 
 > 고수준 모듈은 저수준 모듈의 구현에 의존해서는 안 되며, 저수준 모듈이 고수준 모듈에 의존해야 한다는 것
 
-- 고수준 모듈
+- 고수준 모듈<br/>
   :point_right: 입력과 출력으로부터 먼(비즈니스와 관련된) 추상화된 모듈
 
-- 저수준 모듈
+- 저수준 모듈<br/>
   :point_right: 입력과 출력으로부터 가까운(HTTP, 데이터베이스, 캐시 등과 관련된) 구현 모듈
 
 &rarr; 비즈니스와 관련된 부분이 세부 사항에는 의존하지 않는 설계 원칙
