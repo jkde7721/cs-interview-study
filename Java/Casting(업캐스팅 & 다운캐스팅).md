@@ -51,16 +51,16 @@
 
 ```java
 class Parent {
-	String name;
+    String name;
     int age;
 }
 
 class Child extends Parent {
-	/*
+    /*
     String name;
     int age;
     */
-	int number;
+    int number;
 }
 
 Parent p = new Parent();
@@ -104,8 +104,8 @@ public class Main {
         Zealot zealot = new Zealot();
 
         //업캐스팅(upcasting)
-		unit_up = (Unit) zealot;
-		unit_up = zealot; //업캐스팅은 형변환 괄호 생략 가능
+        unit_up = (Unit) zealot;
+        unit_up = zealot; //업캐스팅은 형변환 괄호 생략 가능
     }
 }
 ```
@@ -117,7 +117,7 @@ public class Main {
 - 멤버 개수 감소로 인한 멤버 접근 제한 존재
 - 실행할 수 있는 속성과 메소드가 제한됨
 - 위 `unit_up` 객체를 통해서는 `Unit` 클래스에 정의된 멤버에만 접근이 가능
-- ex. `Zealog` 클래스에만 정의된 `teleportation()` 메소드 실행 시, 컴파일 오류 발생
+- ex. `Zealot` 클래스에만 정의된 `teleportation()` 메소드 실행 시, 컴파일 오류 발생
 
 → 객체를 업캐스팅을 하게 되면 자식과 부모의 공통된 것만 사용할 수 있고 자식 클래스에서 새로 정의된 것은 사용 불가
 
@@ -135,7 +135,7 @@ public class Main {
 
 공통적으로 할 수 있는 부분을 만들어 간단하게 다루기 위해, 즉 상속 관계에서 상속 받은 서브 클래스가 몇 개이든 하나의 클래스로 묶어서 관리할 수 있기 때문
 
-**여러 서브 클래스를 하나의 클래스로 묶어서 관리하는 예제**ㄴ
+**여러 서브 클래스를 하나의 클래스로 묶어서 관리하는 예제**
 
 ```java
 //Shape은 부모 클래스, Rectangle, Triangle, Circle는 자식 클래스
@@ -183,7 +183,7 @@ public class Main {
     public static void main(String[] args) {
         Unit unit_up = new Zealot(); //업캐스팅
 
-        //다운캐스팅(downcasting) - 자식 전용 멤버를 이용하기위해, 이미 업캐스팅한 객체를 되돌릴때 사용
+        //다운 캐스팅(down casting) - 자식 전용 멤버를 이용하기 위해, 이미 업캐스팅한 객체를 되돌릴 때 사용
         Zealot unit_down = (Zealot) unit_up; //캐스팅 연산자는 생략 불가능
         unit_down.attack(); //"찌르기" 출력
         unit_down.teleportation(); //"프로토스 워프" 출력
@@ -200,8 +200,8 @@ public class Main {
 ```java
 Unit unit = new Unit();
 
-//다운캐스팅(downcasting) 예외 - 다운캐스팅은 업스캐팅한 객체를 되돌릴때 적용 되는것이지, 실제 부모 객체를 자식 객체로 강제 형변환은 불가능
-Zealot unit_down = (Zealot) unit; //! RUNTIME ERROR - Unit cannot be cast to Zealot
+//다운 캐스팅(down casting) 예외 - 다운 캐스팅은 업캐스팅한 객체를 되돌릴 때 적용 되는 것이지, 실제 부모 객체를 자식 객체로 강제 형변환은 불가능
+Zealot unit_down = (Zealot) unit; //RUNTIME ERROR - Unit cannot be cast to Zealot
 ```
 
 - 업캐스팅되지 않은 실제 부모 객체를 다운 캐스팅하면 `ClassCaseException` 발생, 즉 컴파일 에러가 아닌 런타임 에러가 발생하기 때문에 더더욱 주의!
@@ -230,7 +230,7 @@ public class Main {
             System.out.println("업캐스팅 불가능");
         }
 
-        //다운스캐팅 유무
+        //다운캐스팅 유무
         Unit unit = new Unit();
         if (unit instanceof Zealot) {
             System.out.println("다운캐스팅 가능");
