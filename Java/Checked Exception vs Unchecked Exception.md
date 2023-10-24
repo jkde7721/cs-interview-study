@@ -6,6 +6,8 @@
 
 > 어떤 원인에 의해 오동작하거나 비정상적으로 종료되는 경우
 
+<br/>
+
 ### 심각도에 따른 분류
 
 ① 에러 (Error) : 시스템에 비정상적인 상황이 발생한 경우
@@ -26,6 +28,8 @@
 > 예외는 Checked Exception과 Unchecked Exception으로 구분
 >
 > ![enter image description here](https://joswlv.github.io/images/java-exception-handling-class-hierarchy-diagram.jpg)
+
+<br/>
 
 ### Checked Exception
 
