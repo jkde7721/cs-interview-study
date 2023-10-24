@@ -7,11 +7,15 @@
 
 &rarr; 이를 바탕으로 직렬화 (Serialization)와 역직렬화 (Deserialization)가 필요해짐
 
+<br/>
+
 ## 직렬화 (Serialization)
 
 > 객체 직렬화는 Java의 객체를 외부로 저장/복원하거나 네트워크 상으로 전송할 수 있도록 바이트 형태로 변환하는 기술을 의미
 
 &rarr; 객체가 아무리 복잡하여도 직렬화를 통해 객체를 바이트 형태로 변환하여 외부로 전송할 수 있는 것
+
+<br/>
 
 ### 직렬화의 특징
 
@@ -19,6 +23,8 @@
 - Java의 기본 라이브러리를 사용하지 않더라도 여러 형태 (CSV, JSON, 일반 파일 등)로 수행이 가능
 - Java에서 제공하는 직렬화 기능은 오직 Java 프로그램끼리만 공유가 가능한 데이터이며, 코드 수정을 하거나 자바 버전이 달라 클래스 속성이 바뀌게 되면 사용할 수 없음
 - Java의 JVM에서 자동으로 처리해주기 때문에 수신부와 송신부의 운영체제가 달라도 아무런 상관이 없음
+
+<br/>
 
 ## 역직렬화 (Deserialization)
 
@@ -52,6 +58,8 @@ class Person implements Serializable {
 
 &rarr; **Serializable 인터페이스는 현재 클래스의 객체가 직렬화가 제공되어야 함을 JVM에게 알려주는 역할만 수행**
 
+<br/>
+
 2. Person 클래스의 객체를 직렬화를 통해 파일로 변환하여 저장
 
 **:heavy_check_mark: 객체 직렬화는 직렬화하고자 하는 객체에 직렬화를 수행해주는 ObjectOutputStream과 직렬화한 내용을 저장할 .txt 파일을 생성해주는 FileOutputStream을 통해 수행**
@@ -68,6 +76,8 @@ public  class Main {
 ```
 
 &rarr; Serialization.txt 파일을 열어서 person 객체의 정보들을 직렬화시켜서 변환된 바이트 형태의 내용을 저장해준다.
+
+<br/>
 
 ### 역직렬화
 
@@ -117,8 +127,9 @@ private  static  final  long serialVersionUID = 1L;
 ```
 
 <br/>
-:bookmark_tabs: serialVersionUID 는 기본적으로 클래스의 해시값을 가짐
--   클래스에 수동으로 ID를 부여함으로써 내용에 관계없이 동일 클래스로 인식함
+:bookmark_tabs: serialVersionUID 는 기본적으로 클래스의 해시값을 가짐<br/>
+
+- 클래스에 수동으로 ID를 부여함으로써 내용에 관계없이 동일 클래스로 인식함
 - 직렬화를 수행할 클래스의 필드값이나 함수는 추가하거나 삭제할 수 있음. 그러나 기존 필드의 이름을 변경시켜서는 안됨
 
 ## 직렬화 단점
@@ -127,7 +138,8 @@ private  static  final  long serialVersionUID = 1L;
 - **타입에 대해 상당히 엄격함**
   :arrow_right: String &rarr; StringBuilder, int &rarr; long 등 잘못된 타입으로 받아들이면 Exception이 발생
 
-:exclamation: 직렬화는 내용 변경이 없을 만한 클래스에 사용하는 것이 좋으며, 사용하더라도 장기 보관용으로는 적합하지 않다.<br/>
+:exclamation: 직렬화는 내용 변경이 없을 만한 클래스에 사용하는 것이 좋으며, 사용하더라도 장기 보관용으로는 적합하지 않다.
+<br/>
 :exclamation: 데이터 크기가 많이 차이나기 때문에 긴 만료 시간을 가지는 데이터는 JSON 등 다른 포맷을 사용하여 저장하는 것이 낫다.
 
 <br/>
