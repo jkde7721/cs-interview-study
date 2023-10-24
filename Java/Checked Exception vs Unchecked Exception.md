@@ -1,5 +1,7 @@
 # Checked Exception vs Unchecked Exception
 
+<br/>
+
 ## 에러와 예외
 
 > 어떤 원인에 의해 오동작하거나 비정상적으로 종료되는 경우
@@ -50,7 +52,9 @@ public  class CheckedException {
 }
 ```
 
-&rarr; example.txt라는 파일을 읽는 코드 <br/>
+&rarr; example.txt라는 파일을 읽는 코드
+<br/>
+
 :point_right: 실제로 example.txt라는 파일은 존재하지 않기 때문에 '**FileNotFoundException**' 예외 발생
 
 ```java
